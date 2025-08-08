@@ -121,12 +121,16 @@
             justify-content: flex-start;
             border-left: 1px solid #e8eaed;
             border-right: 1px solid #e8eaed;
+            max-height: 600px;
         }
 
         .middle-panel .available-rides {
             flex: 1;
             width: 100%;
             margin-bottom: 16px;
+            overflow-y: auto;
+            max-height: 400px;
+            padding-right: 8px;
         }
 
         .middle-panel .ride-option {
@@ -165,6 +169,7 @@
         .right-panel {
             flex: 1.5;
             padding: 16px;
+            max-height: 600px;
         }
 
         .panel-title {
@@ -248,6 +253,9 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+            overflow-y: auto;
+            max-height: 500px;
+            padding-right: 8px;
         }
 
         .ride-option {
@@ -359,6 +367,25 @@
         .badge.deal {
             background: #fff3e0;
             color: #f57c00;
+        }
+
+        /* Custom scrollbar styling */
+        .available-rides::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .available-rides::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .available-rides::-webkit-scrollbar-thumb {
+            background: #ffc107;
+            border-radius: 3px;
+        }
+
+        .available-rides::-webkit-scrollbar-thumb:hover {
+            background: #ffb300;
         }
 
         @media (max-width: 1200px) {
@@ -558,7 +585,7 @@
                 <div class="panel-title">Available cabs</div>
 
                 <!-- Available Rides -->
-                <div class="available-rides">
+                <div class="available-rides" id="available-cabs">
                     <div class="ride-option selected" data-type="hatchback">
                         <div class="ride-icon">🚙</div>
                         <div class="ride-details">
@@ -608,6 +635,106 @@
                         </div>
                         <div class="ride-price">₹189</div>
                     </div>
+
+                    <div class="ride-option" data-type="hatchback">
+                        <div class="ride-icon">🚙</div>
+                        <div class="ride-details">
+                            <div class="ride-name">UberGo <span class="badge">4 seats</span></div>
+                            <div class="ride-description">Affordable hatchback rides</div>
+                            <div class="ride-time">3 mins away • 2:35 PM</div>
+                        </div>
+                        <div class="ride-price">₹445</div>
+                    </div>
+
+                    <div class="ride-option" data-type="sedan">
+                        <div class="ride-icon">🚘</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Ola Prime <span class="badge faster">CNG</span></div>
+                            <div class="ride-description">Premium sedan experience</div>
+                            <div class="ride-time">4 mins away • 2:36 PM</div>
+                        </div>
+                        <div class="ride-price">₹678</div>
+                    </div>
+
+                    <div class="ride-option" data-type="bike">
+                        <div class="ride-icon">🏍️</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Rapido <span class="badge">Fast</span></div>
+                            <div class="ride-description">Quick bike taxi service</div>
+                            <div class="ride-time">1 min away • 2:33 PM</div>
+                        </div>
+                        <div class="ride-price">₹125</div>
+                    </div>
+
+                    <div class="ride-option" data-type="suv">
+                        <div class="ride-icon">🚐</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Ola Auto <span class="badge">7 seats</span></div>
+                            <div class="ride-description">Spacious SUV rentals</div>
+                            <div class="ride-time">7 mins away • 2:42 PM</div>
+                        </div>
+                        <div class="ride-price">₹1,089</div>
+                    </div>
+
+                    <div class="ride-option" data-type="luxury">
+                        <div class="ride-icon">🚙</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Mercedes <span class="badge deal">Premium</span></div>
+                            <div class="ride-description">Luxury car experience</div>
+                            <div class="ride-time">10 mins away • 2:45 PM</div>
+                        </div>
+                        <div class="ride-price">₹1,299</div>
+                    </div>
+
+                    <div class="ride-option" data-type="auto">
+                        <div class="ride-icon">🛺</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Auto Rickshaw <span class="badge faster">Cheap</span></div>
+                            <div class="ride-description">Local auto rides</div>
+                            <div class="ride-time">2 mins away • 2:34 PM</div>
+                        </div>
+                        <div class="ride-price">₹89</div>
+                    </div>
+
+                    <div class="ride-option" data-type="minibus">
+                        <div class="ride-icon">🚌</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Mini Bus <span class="badge">12 seats</span></div>
+                            <div class="ride-description">Group travel solution</div>
+                            <div class="ride-time">15 mins away • 2:48 PM</div>
+                        </div>
+                        <div class="ride-price">₹1,499</div>
+                    </div>
+
+                    <div class="ride-option" data-type="premium">
+                        <div class="ride-icon">🚗</div>
+                        <div class="ride-details">
+                            <div class="ride-name">BMW Premium <span class="badge deal">Luxury</span></div>
+                            <div class="ride-description">Ultimate comfort ride</div>
+                            <div class="ride-time">12 mins away • 2:47 PM</div>
+                        </div>
+                        <div class="ride-price">₹1,599</div>
+                    </div>
+
+                    <div class="ride-option" data-type="hatchback">
+                        <div class="ride-icon">🚙</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Swift Dzire <span class="badge">4 seats</span></div>
+                            <div class="ride-description">Comfortable hatchback</div>
+                            <div class="ride-time">6 mins away • 2:39 PM</div>
+                        </div>
+                        <div class="ride-price">₹389</div>
+                    </div>
+
+                    <div class="ride-option" data-type="sedan">
+                        <div class="ride-icon">🚘</div>
+                        <div class="ride-details">
+                            <div class="ride-name">Honda City <span class="badge faster">CNG</span></div>
+                            <div class="ride-description">Premium sedan comfort</div>
+                            <div class="ride-time">5 mins away • 2:38 PM</div>
+                        </div>
+                        <div class="ride-price">₹756</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -622,15 +749,35 @@
             });
         });
 
-
-
-        // Ride option selection
+        // Ride option selection with filtering
         document.querySelectorAll('.ride-option').forEach(option => {
             option.addEventListener('click', function() {
+                // Remove selected class from all ride options
                 document.querySelectorAll('.ride-option').forEach(o => o.classList.remove('selected'));
                 this.classList.add('selected');
+                
+                // Get the selected vehicle type
+                const selectedType = this.getAttribute('data-type');
+                
+                // Filter available cabs based on selection
+                filterAvailableCabs(selectedType);
             });
         });
+
+        // Function to filter available cabs
+        function filterAvailableCabs(vehicleType) {
+            const availableCabs = document.querySelectorAll('#available-cabs .ride-option');
+            
+            availableCabs.forEach(cab => {
+                const cabType = cab.getAttribute('data-type');
+                
+                if (vehicleType === 'all' || cabType === vehicleType) {
+                    cab.style.display = 'flex';
+                } else {
+                    cab.style.display = 'none';
+                }
+            });
+        }
 
         // Set current date and time
         const now = new Date();
