@@ -8,6 +8,10 @@
   ],
   "routes": [
     {
+      "src": "/filter",
+      "dest": "/filter.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }

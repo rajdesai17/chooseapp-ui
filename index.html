@@ -60,41 +60,6 @@
             padding: 20px;
         }
 
-        .nav-tabs {
-            background: white;
-            border-radius: 16px;
-            padding: 6px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            display: flex;
-            gap: 2px;
-        }
-
-        .nav-tab {
-            flex: 1;
-            padding: 14px 20px;
-            background: transparent;
-            border: none;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            color: #666;
-            text-transform: lowercase;
-        }
-
-        .nav-tab.active {
-            background: #ffc107;
-            color: #000;
-            box-shadow: 0 4px 16px rgba(255, 193, 7, 0.3);
-        }
-
-        .nav-tab:hover:not(.active) {
-            background: #fff8e1;
-            color: #333;
-        }
-
         .booking-section {
             background: white;
             border-radius: 20px;
@@ -104,70 +69,66 @@
             gap: 24px;
         }
 
-        .left-panel {
-            flex: 0.8;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
+
 
         .middle-panel {
-            flex: 1.2;
-            padding: 16px;
+            flex: 0.4;
+            max-width: 340px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: stretch;
             justify-content: flex-start;
-            border-left: 1px solid #e8eaed;
             border-right: 1px solid #e8eaed;
             max-height: 600px;
         }
 
-        .middle-panel .available-rides {
-            flex: 1;
-            width: 100%;
-            margin-bottom: 16px;
-            overflow-y: auto;
-            max-height: 400px;
-            padding-right: 8px;
+        /* Compact filter sidebar */
+        .filter-card {
+            background: #f8f9fa;
+            border: 1px solid #e8eaed;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-
-        .middle-panel .ride-option {
-            padding: 12px;
+        .filter-heading {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .filter-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        .chip-grid {
+            display: flex;
+            flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 8px;
         }
-
-        .middle-panel .ride-icon {
-            font-size: 24px;
-            min-width: 35px;
+        .chip {
+            background: #f5f6f8;
+            color: #1a1a1a;
+            border: 1px solid #e8eaed;
+            border-radius: 10px;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
-
-        .middle-panel .ride-name {
-            font-size: 15px;
-        }
-
-        .middle-panel .ride-description {
-            font-size: 12px;
-        }
-
-        .middle-panel .ride-time {
-            font-size: 11px;
-        }
-
-        .middle-panel .ride-price {
-            font-size: 16px;
-            min-width: 60px;
-        }
-
-        .middle-panel .badge {
-            padding: 2px 6px;
-            font-size: 9px;
+        .chip:hover { background: #fff; }
+        .chip.selected {
+            background: #ffc107;
+            color: #000;
+            border-color: #ffc107;
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
         }
 
         .right-panel {
-            flex: 1.5;
+            flex: 1;
             padding: 16px;
             max-height: 600px;
         }
@@ -402,11 +363,6 @@
                 text-align: left;
                 margin-bottom: 12px;
             }
-
-            .pickup-text, .drop-text {
-                text-align: left;
-                font-size: 18px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -420,15 +376,6 @@
 
             .booking-section {
                 padding: 16px 12px;
-            }
-
-            .nav-tab {
-                font-size: 12px;
-                padding: 10px 12px;
-            }
-
-            .pickup-text, .drop-text {
-                font-size: 16px;
             }
 
             .panel-title {
@@ -483,102 +430,26 @@
     </div>
 
     <div class="main-container">
-        <!-- Navigation Tabs -->
-        <div class="nav-tabs">
-            <button class="nav-tab active" data-tab="outstation">outstation</button>
-            <button class="nav-tab" data-tab="airport">airport</button>
-            <button class="nav-tab" data-tab="local">local</button>
-        </div>
-
+        
         <!-- Booking Section -->
         <div class="booking-section">
-            <div class="left-panel">
-                <div class="pickup-drop-container">
-                    <div class="pickup-text">pickup</div>
-                    <div class="drop-text">drop</div>
-                </div>
-
-                <!-- Location Inputs -->
-                <div class="location-input">
-                    <span class="location-icon">📍</span>
-                    <input type="text" placeholder="Enter pickup location" id="pickup-location">
-                </div>
-
-                <div class="location-input">
-                    <span class="location-icon">🎯</span>
-                    <input type="text" placeholder="Enter drop location" id="drop-location">
-                </div>
-
-                <!-- Date and Time -->
-                <div class="date-picker">
-                    <input type="date" class="date-input" id="pickup-date">
-                    <input type="time" class="date-input" id="pickup-time" value="14:30">
-                </div>
-            </div>
 
             <div class="middle-panel">
-                <div class="panel-title">Choose a ride</div>
-
-                <!-- Ride Options in Middle Panel -->
-                <div class="available-rides">
-                    <div class="ride-option selected" data-type="all">
-                        <div class="ride-icon">🚗</div>
-                        <div class="ride-details">
-                            <div class="ride-name">All <span class="badge">All</span></div>
-                            <div class="ride-description">View all available options</div>
-                        </div>
-                    </div>
-
-                    <div class="ride-option" data-type="hatchback">
-                        <div class="ride-icon">🚙</div>
-                        <div class="ride-details">
-                            <div class="ride-name">Hatchback <span class="badge">4 seats</span></div>
-                            <div class="ride-description">SAVAARI car rentals</div>
-                        </div>
-                    </div>
-
-                    <div class="ride-option" data-type="bike">
-                        <div class="ride-icon">🏍️</div>
-                        <div class="ride-details">
-                            <div class="ride-name">Bike Taxi <span class="badge faster">Fast</span></div>
-                            <div class="ride-description">cabbazar marketplace</div>
-                        </div>
-                    </div>
-
-                    <div class="ride-option" data-type="sedan">
-                        <div class="ride-icon">🚘</div>
-                        <div class="ride-details">
-                            <div class="ride-name">Sedan <span class="badge faster">CNG</span></div>
-                            <div class="ride-description">gozo eco-friendly rides</div>
-                        </div>
-                    </div>
-
-                    <div class="ride-option" data-type="suv">
-                        <div class="ride-icon">🚐</div>
-                        <div class="ride-details">
-                            <div class="ride-name">SUV <span class="badge">7 seats</span></div>
-                            <div class="ride-description">SAVAARI spacious rides</div>
-                        </div>
-                    </div>
-
-                    <div class="ride-option" data-type="suvplus">
-                        <div class="ride-icon">🚐</div>
-                        <div class="ride-details">
-                            <div class="ride-name">SUV+ <span class="badge">8 seats</span></div>
-                            <div class="ride-description">cabbazar extra spacious</div>
-                        </div>
-                    </div>
-
-                    <div class="ride-option" data-type="premium">
-                        <div class="ride-icon">🚗</div>
-                        <div class="ride-details">
-                            <div class="ride-name">Premium <span class="badge deal">Good deal</span></div>
-                            <div class="ride-description">gozo premium comfort</div>
+                <div class="filter-card">
+                    <div class="filter-heading">Filters</div>
+                    <div class="filter-section">
+                        <div class="filter-section-title">Taxi Type</div>
+                        <div class="chip-grid">
+                            <button class="chip selected" data-type="all">All</button>
+                            <button class="chip" data-type="hatchback">Hatchback</button>
+                            <button class="chip" data-type="sedan">Sedan</button>
+                            <button class="chip" data-type="suv">SUV</button>
+                            <button class="chip" data-type="suvplus">SUV+</button>
+                            <button class="chip" data-type="bike">Bike</button>
+                            <button class="chip" data-type="premium">Premium</button>
                         </div>
                     </div>
                 </div>
-
-                <button class="book-btn">Check Availability</button>
             </div>
 
             <div class="right-panel">
@@ -711,14 +582,6 @@
     </div>
 
     <script>
-        // Navigation tabs
-        document.querySelectorAll('.nav-tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
-
         // Ride option selection with filtering
         document.querySelectorAll('.ride-option').forEach(option => {
             option.addEventListener('click', function() {
@@ -730,6 +593,16 @@
                 const selectedType = this.getAttribute('data-type');
                 
                 // Filter available cabs based on selection
+                filterAvailableCabs(selectedType);
+            });
+        });
+
+        // Chip filters selection
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                const selectedType = this.getAttribute('data-type');
                 filterAvailableCabs(selectedType);
             });
         });
@@ -749,16 +622,7 @@
             });
         }
 
-        // Set current date and time
-        const now = new Date();
-        const currentDate = now.toISOString().split('T')[0];
-        const currentTime = now.toTimeString().split(' ')[0].slice(0, 5);
-        
-        document.getElementById('pickup-date').value = currentDate;
-        document.getElementById('pickup-time').value = currentTime;
 
-        // Auto-fill current location
-        document.getElementById('pickup-location').placeholder = "Current location detected";
     </script>
 </body>
 </html>

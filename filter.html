@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChooseApp - Filter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f4f4f4 0%, #ffffff 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background: white;
+            padding: 20px 40px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .login-btn {
+            background: #ffc107;
+            color: #000;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: #ffb300;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .services-title {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .booking-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+        }
+
+        .trip-tabs {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 3px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+
+        .trip-tab {
+            flex: 1;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .trip-tab.active {
+            background: #ffc107;
+            color: #000;
+            box-shadow: 0 4px 16px rgba(255, 193, 7, 0.3);
+        }
+
+        .input-grid {
+            display: flex;
+            gap: 12px;
+            align-items: end;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .input-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .input-field {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-field input {
+            width: 100%;
+            padding: 8px 12px 8px 32px;
+            border: 1px solid #e8eaed;
+            border-radius: 6px;
+            font-size: 12px;
+            background: #fafbfc;
+            transition: all 0.3s ease;
+        }
+
+        .input-field input:focus {
+            outline: none;
+            border-color: #ffc107;
+            box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.1);
+            background: white;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Autocomplete suggestions */
+        .suggestions {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #e8eaed;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            z-index: 50;
+            max-height: 220px;
+            overflow-y: auto;
+        }
+        .suggestion-item {
+            padding: 10px 12px;
+            font-size: 13px;
+            color: #1a1a1a;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .suggestion-item:hover,
+        .suggestion-item.active {
+            background: #fff8e1;
+        }
+        .suggestion-icon {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .swap-btn {
+            background: #f0f0f0;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 4px;
+            flex-shrink: 0;
+        }
+
+        .explore-btn {
+            background: linear-gradient(135deg, #ffc107, #ffb300);
+            color: #000;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(255, 193, 7, 0.3);
+        }
+
+        .explore-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(255, 193, 7, 0.4);
+        }
+
+        .service-tagline {
+            text-align: center;
+            margin-top: 12px;
+            color: #666;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 10px 16px;
+            }
+
+            .main-container {
+                padding: 20px 16px;
+            }
+
+            .booking-card {
+                padding: 16px;
+            }
+
+            .input-grid {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🚗 ChooseApp</div>
+        <button class="login-btn" onclick="window.location.href='index.html'">Back</button>
+    </div>
+
+    <div class="main-container">
+        <div class="services-title">Set your trip details</div>
+
+        <div class="booking-card">
+            <div class="trip-tabs">
+                <button class="trip-tab active">OUTSTATION</button>
+                <button class="trip-tab">LOCAL</button>
+                <button class="trip-tab">AIRPORT</button>
+            </div>
+
+            <div class="input-grid">
+                <div class="input-group">
+                    <label class="input-label">FROM</label>
+                    <div class="input-field">
+                        <span class="input-icon">🔍</span>
+                        <input type="text" placeholder="Mumbai" id="from-location">
+                    </div>
+                </div>
+
+                <button class="swap-btn">⇄</button>
+
+                <div class="input-group">
+                    <label class="input-label">TO</label>
+                    <div class="input-field">
+                        <span class="input-icon">🔍</span>
+                        <input type="text" placeholder="Pune, Maharashtra" id="to-location">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">PICK UP DATE</label>
+                    <div class="input-field">
+                        <input type="date" id="pickup-date">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">PICK UP TIME</label>
+                    <div class="input-field">
+                        <input type="time" id="pickup-time" value="07:00">
+                    </div>
+                </div>
+            </div>
+
+            <button class="explore-btn" onclick="exploreCabs()">EXPLORE CABS</button>
+
+            <div class="service-tagline">
+                India’s top rated car rental service
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Trip tab toggle
+        document.querySelectorAll('.trip-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.trip-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Set current date
+        const now = new Date();
+        const currentDate = now.toISOString().split('T')[0];
+        document.getElementById('pickup-date').value = currentDate;
+
+        // Explore cabs function
+        function exploreCabs() {
+            const fromLocation = document.getElementById('from-location').value;
+            const toLocation = document.getElementById('to-location').value;
+            const pickupDate = document.getElementById('pickup-date').value;
+            const pickupTime = document.getElementById('pickup-time').value;
+
+            localStorage.setItem('fromLocation', fromLocation);
+            localStorage.setItem('toLocation', toLocation);
+            localStorage.setItem('pickupDate', pickupDate);
+            localStorage.setItem('pickupTime', pickupTime);
+
+            window.location.href = 'index.html';
+        }
+
+        // Swap locations
+        document.querySelector('.swap-btn').addEventListener('click', function() {
+            const fromInput = document.getElementById('from-location');
+            const toInput = document.getElementById('to-location');
+            const temp = fromInput.value;
+            fromInput.value = toInput.value;
+            toInput.value = temp;
+        });
+
+        // Mock city data for autocomplete
+        const CITIES = [
+            'Mumbai', 'Pune', 'Delhi', 'Bengaluru', 'Hyderabad', 'Chennai', 'Kolkata', 'Ahmedabad',
+            'Jaipur', 'Surat', 'Nagpur', 'Indore', 'Thane', 'Navi Mumbai', 'Noida', 'Gurugram'
+        ];
+
+        function createSuggestions(inputEl) {
+            // Ensure one container per input
+            let container = inputEl.parentElement.querySelector('.suggestions');
+            if (!container) {
+                container = document.createElement('div');
+                container.className = 'suggestions';
+                inputEl.parentElement.appendChild(container);
+            }
+            return container;
+        }
+
+        function renderSuggestions(container, items, onPick) {
+            container.innerHTML = '';
+            items.forEach((city, idx) => {
+                const item = document.createElement('div');
+                item.className = 'suggestion-item' + (idx === 0 ? ' active' : '');
+                item.innerHTML = `<span class="suggestion-icon">📍</span><span>${city}</span>`;
+                item.addEventListener('mousedown', e => {
+                    e.preventDefault(); // prevent input blur before click
+                    onPick(city);
+                });
+                container.appendChild(item);
+            });
+            container.style.display = items.length ? 'block' : 'none';
+        }
+
+        function setupAutocomplete(inputId, nextFocus) {
+            const inputEl = document.getElementById(inputId);
+            const container = createSuggestions(inputEl);
+
+            let filtered = [];
+            let activeIndex = 0;
+
+            function filterList() {
+                const q = inputEl.value.trim().toLowerCase();
+                filtered = CITIES.filter(c => c.toLowerCase().includes(q)).slice(0, 8);
+                activeIndex = 0;
+                renderSuggestions(container, filtered, pick);
+            }
+
+            function pick(value) {
+                inputEl.value = value;
+                container.style.display = 'none';
+                if (nextFocus === 'to') {
+                    document.getElementById('to-location').focus();
+                } else if (nextFocus === 'date') {
+                    // Attempt to open date picker
+                    const dateEl = document.getElementById('pickup-date');
+                    dateEl.showPicker?.();
+                    dateEl.focus();
+                } else if (nextFocus === 'time') {
+                    const timeEl = document.getElementById('pickup-time');
+                    timeEl.showPicker?.();
+                    timeEl.focus();
+                }
+            }
+
+            inputEl.addEventListener('input', filterList);
+            inputEl.addEventListener('focus', filterList);
+            inputEl.addEventListener('blur', () => setTimeout(() => (container.style.display = 'none'), 100));
+            inputEl.addEventListener('keydown', e => {
+                if (!filtered.length) return;
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    activeIndex = (activeIndex + 1) % filtered.length;
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    activeIndex = (activeIndex - 1 + filtered.length) % filtered.length;
+                } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    pick(filtered[activeIndex]);
+                } else {
+                    return; // let other keys pass
+                }
+                // Update active item
+                [...container.children].forEach((el, idx) => {
+                    el.classList.toggle('active', idx === activeIndex);
+                });
+            });
+        }
+
+        // Setup flows: FROM -> TO -> DATE -> TIME
+        setupAutocomplete('from-location', 'to');
+        setupAutocomplete('to-location', 'date');
+        document.getElementById('pickup-date').addEventListener('change', () => {
+            const timeEl = document.getElementById('pickup-time');
+            timeEl.showPicker?.();
+            timeEl.focus();
+        });
+    </script>
+</body>
+</html>
