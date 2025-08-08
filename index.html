@@ -281,6 +281,26 @@
             font-weight: 500;
         }
 
+        /* Ride meta (capacity, luggage, AC) */
+        .ride-meta { 
+            display: flex; 
+            gap: 16px; 
+            align-items: center; 
+            margin-top: 6px;
+        }
+        .ride-meta .meta-item { 
+            display: flex; 
+            align-items: center; 
+            gap: 6px; 
+            font-size: 12px; 
+            color: #5f6368; 
+        }
+        .ride-meta .meta-icon { 
+            color: #9aa0a6; 
+            display: flex; 
+            align-items: center; 
+        }
+
         .ride-price {
             font-size: 20px;
             font-weight: 700;
@@ -463,6 +483,11 @@
                             <div class="ride-name">SAVAARI <span class="badge">4 seats</span></div>
                             <div class="ride-description">Car rentals & affordable rides</div>
                             <div class="ride-time">5 mins away • 2:40 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹529</div>
                     </div>
@@ -473,6 +498,11 @@
                             <div class="ride-name">gozo <span class="badge faster">CNG</span></div>
                             <div class="ride-description">Eco-friendly CNG rides</div>
                             <div class="ride-time">2 mins away • 2:37 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹823</div>
                     </div>
@@ -483,6 +513,11 @@
                             <div class="ride-name">gozo Premium <span class="badge deal">Good deal</span></div>
                             <div class="ride-description">Premium CNG comfort</div>
                             <div class="ride-time">2 mins away • 2:38 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹597</div>
                     </div>
@@ -493,8 +528,28 @@
                             <div class="ride-name">SAVAARI SUV <span class="badge">7 seats</span></div>
                             <div class="ride-description">Spacious family rentals</div>
                             <div class="ride-time">6 mins away • 2:41 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>6</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹945</div>
+                    </div>
+
+                    <div class="ride-option" data-type="suvplus">
+                        <div class="ride-icon">🚐</div>
+                        <div class="ride-details">
+                            <div class="ride-name">SAVAARI SUV+ <span class="badge">8 seats</span></div>
+                            <div class="ride-description">Extra spacious 8-seater</div>
+                            <div class="ride-time">7 mins away • 2:44 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>8</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>5</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
+                        </div>
+                        <div class="ride-price">₹1,249</div>
                     </div>
 
                     <div class="ride-option" data-type="bike">
@@ -503,6 +558,11 @@
                             <div class="ride-name">cabbazar <span class="badge">Fast</span></div>
                             <div class="ride-description">Quick cab marketplace</div>
                             <div class="ride-time">8 mins away • 2:43 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>1</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>1</div>
+                                <div class="meta-item"><span class="meta-icon">🌀</span>Non-AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹189</div>
                     </div>
@@ -513,6 +573,11 @@
                             <div class="ride-name">UberGo <span class="badge">4 seats</span></div>
                             <div class="ride-description">Affordable hatchback rides</div>
                             <div class="ride-time">3 mins away • 2:35 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹445</div>
                     </div>
@@ -523,6 +588,11 @@
                             <div class="ride-name">Ola Prime <span class="badge faster">CNG</span></div>
                             <div class="ride-description">Premium sedan experience</div>
                             <div class="ride-time">4 mins away • 2:36 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹678</div>
                     </div>
@@ -533,6 +603,11 @@
                             <div class="ride-name">Rapido <span class="badge">Fast</span></div>
                             <div class="ride-description">Quick bike taxi service</div>
                             <div class="ride-time">1 min away • 2:33 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>1</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>1</div>
+                                <div class="meta-item"><span class="meta-icon">🌀</span>Non-AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹125</div>
                     </div>
@@ -543,6 +618,11 @@
                             <div class="ride-name">Ola Auto <span class="badge">7 seats</span></div>
                             <div class="ride-description">Spacious SUV rentals</div>
                             <div class="ride-time">7 mins away • 2:42 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>6</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹1,089</div>
                     </div>
@@ -553,6 +633,11 @@
                             <div class="ride-name">BMW Premium <span class="badge deal">Luxury</span></div>
                             <div class="ride-description">Ultimate comfort ride</div>
                             <div class="ride-time">12 mins away • 2:47 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹1,599</div>
                     </div>
@@ -563,6 +648,11 @@
                             <div class="ride-name">Swift Dzire <span class="badge">4 seats</span></div>
                             <div class="ride-description">Comfortable hatchback</div>
                             <div class="ride-time">6 mins away • 2:39 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹389</div>
                     </div>
@@ -573,6 +663,11 @@
                             <div class="ride-name">Honda City <span class="badge faster">CNG</span></div>
                             <div class="ride-description">Premium sedan comfort</div>
                             <div class="ride-time">5 mins away • 2:38 PM</div>
+                            <div class="ride-meta">
+                                <div class="meta-item"><span class="meta-icon">👤</span>4</div>
+                                <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
+                                <div class="meta-item"><span class="meta-icon">❄️</span>AC</div>
+                            </div>
                         </div>
                         <div class="ride-price">₹756</div>
                     </div>
