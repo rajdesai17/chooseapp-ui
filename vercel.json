@@ -4,8 +4,9 @@
     { "src": "*.html", "use": "@vercel/static" }
   ],
   "routes": [
+    { "src": "/", "dest": "/filter.html" },
     { "src": "/filter", "dest": "/filter.html" },
-    { "src": "/", "dest": "/index.html" },
+    { "src": "/index", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
