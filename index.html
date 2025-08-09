@@ -311,12 +311,7 @@
             line-height: 1.4;
         }
 
-        .ride-time {
-            color: #ffc107;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
+        
         /* Ride meta (capacity, luggage, AC) */
         .ride-meta { 
             display: flex; 
@@ -500,32 +495,14 @@
                         <a class="clear-link" id="clear-filters">Clear All</a>
                     </div>
 
-                    <button class="compare-btn" id="compare-btn">↔ Compare Prices</button>
-
                     <div class="filter-section">
                         <div class="filter-section-title">Car Type</div>
                         <div class="list-select" id="car-type-list">
-                            <button class="option selected" data-type="all">All</button>
-                            <button class="option" data-type="hatchback">Hatchback</button>
+                            <button class="option selected" data-type="hatchback">Hatchback</button>
                             <button class="option" data-type="sedan">Sedan</button>
                             <button class="option" data-type="suv">SUV</button>
-                            <button class="option" data-type="suvplus">SUV+</button>
+                            <button class="option" data-type="suvplus">MPV / SUV+</button>
                             <button class="option" data-type="premium">Premium</button>
-                            <button class="option" data-type="bike">Bike</button>
-                        </div>
-                    </div>
-
-                    <div class="filter-section range-group">
-                        <div class="filter-section-title">Price Range</div>
-                        <div class="range-controls">
-                            <div class="range-row">
-                                <input type="range" id="min-price" min="0" max="15000" step="100" value="0">
-                                <input type="range" id="max-price" min="0" max="15000" step="100" value="15000">
-                            </div>
-                            <div class="range-values">
-                                <span id="min-price-label">₹0</span>
-                                <span id="max-price-label">₹15,000</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -541,7 +518,6 @@
                         <div class="ride-details">
                             <div class="ride-name">SAVAARI <span class="badge">4 seats</span></div>
                             <div class="ride-description">Car rentals & affordable rides</div>
-                            <div class="ride-time">5 mins away • 2:40 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
@@ -556,7 +532,6 @@
                         <div class="ride-details">
                             <div class="ride-name">gozo <span class="badge faster">CNG</span></div>
                             <div class="ride-description">Eco-friendly CNG rides</div>
-                            <div class="ride-time">2 mins away • 2:37 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
@@ -571,7 +546,6 @@
                         <div class="ride-details">
                             <div class="ride-name">gozo Premium <span class="badge deal">Good deal</span></div>
                             <div class="ride-description">Premium CNG comfort</div>
-                            <div class="ride-time">2 mins away • 2:38 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
@@ -586,7 +560,6 @@
                         <div class="ride-details">
                             <div class="ride-name">SAVAARI SUV <span class="badge">7 seats</span></div>
                             <div class="ride-description">Spacious family rentals</div>
-                            <div class="ride-time">6 mins away • 2:41 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>6</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>4</div>
@@ -601,7 +574,6 @@
                         <div class="ride-details">
                             <div class="ride-name">SAVAARI SUV+ <span class="badge">8 seats</span></div>
                             <div class="ride-description">Extra spacious 8-seater</div>
-                            <div class="ride-time">7 mins away • 2:44 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>8</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>5</div>
@@ -616,7 +588,6 @@
                         <div class="ride-details">
                             <div class="ride-name">cabbazar <span class="badge">Fast</span></div>
                             <div class="ride-description">Quick cab marketplace</div>
-                            <div class="ride-time">8 mins away • 2:43 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>1</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>1</div>
@@ -631,7 +602,6 @@
                         <div class="ride-details">
                             <div class="ride-name">UberGo <span class="badge">4 seats</span></div>
                             <div class="ride-description">Affordable hatchback rides</div>
-                            <div class="ride-time">3 mins away • 2:35 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
@@ -646,7 +616,6 @@
                         <div class="ride-details">
                             <div class="ride-name">Ola Prime <span class="badge faster">CNG</span></div>
                             <div class="ride-description">Premium sedan experience</div>
-                            <div class="ride-time">4 mins away • 2:36 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
@@ -661,7 +630,6 @@
                         <div class="ride-details">
                             <div class="ride-name">Rapido <span class="badge">Fast</span></div>
                             <div class="ride-description">Quick bike taxi service</div>
-                            <div class="ride-time">1 min away • 2:33 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>1</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>1</div>
@@ -676,7 +644,6 @@
                         <div class="ride-details">
                             <div class="ride-name">QuickRide <span class="badge faster">Express</span></div>
                             <div class="ride-description">Instant pickup bike taxi</div>
-                            <div class="ride-time">2 mins away • 2:34 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>1</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>1</div>
@@ -691,7 +658,6 @@
                         <div class="ride-details">
                             <div class="ride-name">BikeNow <span class="badge">Saver</span></div>
                             <div class="ride-description">Budget-friendly bike rides</div>
-                            <div class="ride-time">3 mins away • 2:36 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>1</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>1</div>
@@ -706,7 +672,6 @@
                         <div class="ride-details">
                             <div class="ride-name">Ola Auto <span class="badge">7 seats</span></div>
                             <div class="ride-description">Spacious SUV rentals</div>
-                            <div class="ride-time">7 mins away • 2:42 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>6</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>4</div>
@@ -721,7 +686,6 @@
                         <div class="ride-details">
                             <div class="ride-name">BMW Premium <span class="badge deal">Luxury</span></div>
                             <div class="ride-description">Ultimate comfort ride</div>
-                            <div class="ride-time">12 mins away • 2:47 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
@@ -736,7 +700,6 @@
                         <div class="ride-details">
                             <div class="ride-name">Swift Dzire <span class="badge">4 seats</span></div>
                             <div class="ride-description">Comfortable hatchback</div>
-                            <div class="ride-time">6 mins away • 2:39 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>2</div>
@@ -751,7 +714,6 @@
                         <div class="ride-details">
                             <div class="ride-name">Honda City <span class="badge faster">CNG</span></div>
                             <div class="ride-description">Premium sedan comfort</div>
-                            <div class="ride-time">5 mins away • 2:38 PM</div>
                             <div class="ride-meta">
                                 <div class="meta-item"><span class="meta-icon">👤</span>4</div>
                                 <div class="meta-item"><span class="meta-icon">🧳</span>3</div>
@@ -769,25 +731,8 @@
         // Ride option selection with filtering
         document.querySelectorAll('.ride-option').forEach(option => {
             option.addEventListener('click', function() {
-                // Remove selected class from all ride options
                 document.querySelectorAll('.ride-option').forEach(o => o.classList.remove('selected'));
                 this.classList.add('selected');
-                
-                // Get the selected vehicle type
-                const selectedType = this.getAttribute('data-type');
-                
-                // Filter available cabs based on selection
-                filterAvailableCabs(selectedType);
-            });
-        });
-
-        // Chip filters selection
-        document.querySelectorAll('.chip').forEach(chip => {
-            chip.addEventListener('click', function() {
-                document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                const selectedType = this.getAttribute('data-type');
-                filterAvailableCabs(selectedType);
             });
         });
 
@@ -805,63 +750,22 @@
         const clearBtn = document.getElementById('clear-filters');
         if (clearBtn) clearBtn.addEventListener('click', () => {
             document.querySelectorAll('#car-type-list .option').forEach(o=>o.classList.remove('selected'));
-            document.querySelector('#car-type-list .option[data-type="all"]').classList.add('selected');
-            filterAvailableCabs('all');
-            // Reset price sliders
-            document.getElementById('min-price').value = 0;
-            document.getElementById('max-price').value = 15000;
-            updatePriceLabels();
-            filterByPrice();
+            const defaultOpt = document.querySelector('#car-type-list .option[data-type="hatchback"]');
+            defaultOpt?.classList.add('selected');
+            filterAvailableCabs('hatchback');
         });
 
-        // Price range sliders
-        const minPrice = document.getElementById('min-price');
-        const maxPrice = document.getElementById('max-price');
-        const minLabel = document.getElementById('min-price-label');
-        const maxLabel = document.getElementById('max-price-label');
-
-        function updatePriceLabels(){
-            minLabel.textContent = `₹${Number(minPrice.value).toLocaleString('en-IN')}`;
-            maxLabel.textContent = `₹${Number(maxPrice.value).toLocaleString('en-IN')}`;
-        }
-        function filterByPrice(){
-            const min = Number(minPrice.value); const max = Number(maxPrice.value);
+        // Only type-based filtering now
+        function filterAvailableCabs(type){
             document.querySelectorAll('#available-cabs .ride-option').forEach(card => {
-                const priceText = card.querySelector('.ride-price').textContent.replace(/[₹,]/g,'');
-                const price = Number(priceText);
-                const within = price >= min && price <= max;
-                card.dataset.priceVisible = within ? '1' : '0';
-                card.style.display = within && (card.dataset.typeVisible !== '0') ? 'flex' : 'none';
-            });
-        }
-        function clampSliders(){
-            if (Number(minPrice.value) > Number(maxPrice.value)){
-                // keep 100 currency unit gap
-                const tmp = minPrice.value; minPrice.value = maxPrice.value; maxPrice.value = tmp;
-            }
-        }
-        function applyCombinedVisibility(){
-            document.querySelectorAll('#available-cabs .ride-option').forEach(card => {
-                const visible = (card.dataset.priceVisible !== '0') && (card.dataset.typeVisible !== '0');
+                const cabType = card.getAttribute('data-type');
+                const visible = (cabType === type);
                 card.style.display = visible ? 'flex' : 'none';
             });
         }
 
-        minPrice?.addEventListener('input', ()=>{ clampSliders(); updatePriceLabels(); filterByPrice(); });
-        maxPrice?.addEventListener('input', ()=>{ clampSliders(); updatePriceLabels(); filterByPrice(); });
-        updatePriceLabels();
-        filterByPrice();
-
-        // Extend type filter to cooperate with price filter
-        const originalFilter = filterAvailableCabs;
-        function filterAvailableCabs(type){
-            document.querySelectorAll('#available-cabs .ride-option').forEach(card => {
-                const cabType = card.getAttribute('data-type');
-                const typeVisible = (type === 'all' || cabType === type) ? '1' : '0';
-                card.dataset.typeVisible = typeVisible;
-            });
-            applyCombinedVisibility();
-        }
+        // Initialize default filter
+        filterAvailableCabs('hatchback');
 
 
     </script>
